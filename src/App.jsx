@@ -27,9 +27,14 @@ import InvDelete from "./pages/admin/InvDelete";
 
 import EnemyCreate from "./pages/admin/EnemyCreate";
 import EnemyDelete from "./pages/admin/EnemyDelete";
+import EnemyUpdate from "./pages/admin/EnemyUpdate";
 
 import LootCreate from "./pages/admin/LootCreate";
 import LootDelete from "./pages/admin/LootDelete";
+import LootUpdate from "./pages/admin/LootUpdate";
+
+import UserUpdate from "./pages/admin/UserUpdate";
+import UserDelete from "./pages/admin/UserDelete";
 
 function App() {
   const loggedUser = localStorage.getItem("mc_user");
@@ -68,8 +73,12 @@ function App() {
         <Route path="/inv/delete" element={<InvDelete />} />
         <Route path="/enemy/create" element={<EnemyCreate />} />
         <Route path="/enemy/delete" element={<EnemyDelete />} />
+        <Route path="/enemy/update" element={<EnemyUpdate />} />
         <Route path="/loot/create" element={<LootCreate />} />
+        <Route path="/loot/update" element={<LootUpdate />} />
         <Route path="/loot/delete" element={<LootDelete />} />
+        <Route path="/user/update" element={<UserUpdate />} />
+        <Route path="/user/delete" element={<UserDelete />} />
       </Routes>
     </BrowserRouter>
   );

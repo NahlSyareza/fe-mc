@@ -161,15 +161,17 @@ function World() {
     <div className="w-screen h-screen flex flex-col font-gemu text-white">
       <RenderBiome biome={biome} />
 
-      <img
-        src={getPlayer.sprite}
-        style={{
-          transform: `scaleX(${getDirection})`,
-          left: `${getPos.x}px`,
-          top: `${getPos.y}px`,
-        }}
-        className="absolute"
-      />
+      {getPlayer && (
+        <img
+          src={getPlayer.sprite}
+          style={{
+            transform: `scaleX(${getDirection})`,
+            left: `${getPos.x}px`,
+            top: `${getPos.y}px`,
+          }}
+          className="absolute"
+        />
+      )}
 
       <p className="absolute ">
         Player Position: ({getPos.x}, {getPos.y})

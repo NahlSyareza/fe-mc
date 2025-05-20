@@ -4,12 +4,24 @@ import { useEffect, useState } from "react";
 import { autoCapitalize, formatUnderscore } from "../../utils/inventory.util";
 
 function Admin() {
+  const [getPlayers, setPlayers] = useState([]);
   const [getItems, setItems] = useState([]);
   const [getInventories, setInventories] = useState([]);
   const [getEnemies, setEnemies] = useState([]);
   const [getLoots, setLoots] = useState([]);
 
   useEffect(() => {
+    local_cloud_url
+      .get("/user/getAll")
+      .then((e) => {
+        const r = e.data;
+        console.log(r);
+        setPlayers(r.payload);
+      })
+      .catch((e) => {
+        console.error(e);
+      });
+
     local_cloud_url
       .get("/item/getAll")
       .then((e) => {
@@ -94,6 +106,13 @@ function Admin() {
           </>
         );
 
+      case "armor":
+        return (
+          <>
+            <p className="text-zinc-400">{e.def} DEF</p>
+          </>
+        );
+
       default:
         return <></>;
     }
@@ -103,7 +122,37 @@ function Admin() {
     <div className="w-screen h-screen bg-sky-950 font-gemu overflow-x-hidden">
       <Navbar />
       <div className="bg-sky-950 p-20">
-        <p className="text-white">Items</p>
+        <p className="text-white">Players</p>
+        <ul className="text-white space-y-4 mt-2">
+          {!getPlayers.length ? (
+            <>
+              <li>No items!</li>
+              <div className="w-full h-0.5 bg-white"></div>
+            </>
+          ) : (
+            getPlayers.map((e, i) => {
+              return (
+                <>
+                  <li className="flex space-x-4 items-center w-auto h-10">
+                    <div className="w-8 flex justify-center">
+                      <img
+                        src={e.sprite}
+                        title={e._id}
+                        onClick={() => {
+                          navigator.clipboard.writeText(e._id);
+                        }}
+                      />
+                    </div>
+                    <p>{e.name}</p>
+                  </li>
+                  <div className="w-full h-0.5 bg-white"></div>
+                </>
+              );
+            })
+          )}
+        </ul>
+
+        <p className="text-white mt-12">Items</p>
         <ul className="text-white space-y-4 mt-2">
           {!getItems.length ? (
             <>
@@ -150,22 +199,16 @@ function Admin() {
                   <li className="flex space-x-4 items-center w-auto h-12">
                     <div className="w-8 flex items-center">
                       <img
-                        title={e.user._id}
+                        title={e._id}
                         onClick={() => {
-                          navigator.clipboard.writeText(e.user._id);
+                          navigator.clipboard.writeText(e._id);
                         }}
                         src={e.user.sprite}
                       />
                     </div>
                     <p>{e.user.name}</p>
                     <div className="w-8 flex items-center">
-                      <img
-                        title={e._id}
-                        onClick={() => {
-                          navigator.clipboard.writeText(e._id);
-                        }}
-                        src={e.item.sprite}
-                      />
+                      <img src={e.item.sprite} />
                       <p>{e.count}</p>
                     </div>
                     <p></p>

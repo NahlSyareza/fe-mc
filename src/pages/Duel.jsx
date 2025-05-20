@@ -80,7 +80,7 @@ function Duel() {
       console.log("Doing enemy turn");
       setPlayer((e) => ({
         ...e,
-        hp: Math.max(0, e.hp - getEnemy.atk - (getPlayer.def + getTempDef)),
+        hp: Math.max(0, e.hp - (getEnemy.atk - (getPlayer.def + getTempDef))),
         sp: Math.min(e.max_sp, Math.ceil(e.sp + 0.05 * e.max_sp)),
         mp: Math.min(e.max_mp, Math.ceil(e.mp + 0.05 * e.max_mp)),
       }));
@@ -282,7 +282,7 @@ function Duel() {
               opacity: `${getInventory.length && isPlayerTurn ? 1 : 0.5}`,
             }}
             onClick={async () => {
-              console.log(getTempDef);
+              console.log(`Temp def: ${getTempDef}`);
 
               if (!isPlayerTurn) {
                 return;

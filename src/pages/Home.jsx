@@ -44,6 +44,8 @@ function Home() {
         <div className="text-2xl w-full h-3/4 p-52 justify-between items-center flex flex-col">
           <button
             onClick={() => {
+              console.log(u);
+
               if (!u) {
                 toast.error("No logged in account!");
 
