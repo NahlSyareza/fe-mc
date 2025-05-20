@@ -22,7 +22,7 @@ import ItemCreate from "./pages/admin/ItemCreate";
 import ItemUpdate from "./pages/admin/ItemUpdate";
 import ItemDelete from "./pages/admin/ItemDelete";
 
-import InvAdd from "./pages/admin/InvCreate";
+import InvAdd from "./pages/admin/InvAdd";
 import InvDelete from "./pages/admin/InvDelete";
 
 import EnemyCreate from "./pages/admin/EnemyCreate";
