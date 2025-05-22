@@ -23,6 +23,7 @@ import ItemUpdate from "./pages/admin/ItemUpdate";
 import ItemDelete from "./pages/admin/ItemDelete";
 
 import InvAdd from "./pages/admin/InvAdd";
+import InvUpdate from "./pages/admin/InvUpdate";
 import InvDelete from "./pages/admin/InvDelete";
 
 import EnemyCreate from "./pages/admin/EnemyCreate";
@@ -70,6 +71,7 @@ function App() {
         <Route path="/item/update" element={<ItemUpdate />} />
         <Route path="/item/delete" element={<ItemDelete />} />
         <Route path="/inv/add" element={<InvAdd />} />
+        <Route path="/inv/update" element={<InvUpdate />} />
         <Route path="/inv/delete" element={<InvDelete />} />
         <Route path="/enemy/create" element={<EnemyCreate />} />
         <Route path="/enemy/delete" element={<EnemyDelete />} />

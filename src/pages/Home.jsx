@@ -52,11 +52,9 @@ function Home() {
                 return;
               }
 
-              const biome = localStorage.getItem("mc_biome") || "forest";
-
               toast.success("Welcome back!", {
                 onClose: () => {
-                  navigate(`/world/${biome}`);
+                  navigate(`/world/forest`);
                 },
               });
             }}
