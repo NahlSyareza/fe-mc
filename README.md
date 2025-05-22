@@ -56,3 +56,11 @@ Terdapat berbagai page yang akan digunakan, yaitu
 
 - **Loot.jsx, LootCreate.jsx, LootDelete.jsx**</br>
   Page yang menampilkan opsi untuk memasukkan/menghapus data yang berhubungan dengan Delete.
+
+## Walkthrough Aplikasi
+Ketika mengakses aplikasi frontend ini, user akan membuka halaman /home. Di dalam /home terdapat tiga pilihan yaitu Play, Login, dan Register. Jika belum melakukan login, maka user tidak bisa memilih option Play. User bisa login dengan cara membuat akun dengan register atau langsung login jika sudah memiliki akun.
+Di dalam game, user bisa mengakses NPC terdekat untuk mengambil starter item. Setelah itu, dia bisa masuk ke dungeon dengan cara menekan icon di kanan. Sistem combat dari game ini adalah turn based, dan setiap aksi penyerangan memiliki cost. Selain menyerang, user bisa mengonsumsi potion atau menggunakan armor untuk meningkatkan defense. Jika user berhasil mengalahkan musuh, maka ia akan diberikan reward secara random. Jika kalah, maka ia tidak mendapatkan reward. Selain reward, user juga mendapatkan XP apabila ia memenangkan pertarungan.
+Seiring dengan meningkatknya level user, ia mampu mengakses area-area lainnya sesuai dengan ketentuan level area tersebut. Area baru memiliki musuh baru dan juga reward baru.
+
+## Docker
+
