@@ -243,11 +243,13 @@ function Admin() {
                     </div>
                     <p>{e.name}</p>
                     {/* <div className="h-full w-0.5 bg-white"></div> */}
-                    <p className="text-red-400">Level {e.level}</p>
+                    <p className="text-zinc-400">Level {e.level}</p>
                     {/* <div className="h-full w-0.5 bg-white"></div> */}
                     <p className="text-green-400">
                       {autoCapitalize(e.biome)} biome
                     </p>
+                    <p className="text-red-400">Maz HP {e.max_hp}</p>
+                    <p className="text-amber-400">ATK {e.atk}</p>
                   </li>
                   <div className="w-full h-0.5 bg-white"></div>
                 </>
