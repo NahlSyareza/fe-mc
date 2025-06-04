@@ -123,7 +123,5 @@ networks:
 mongodb://localhost:27017
 ```
 
-4. Akan dibuat database baru bernama 'majo_computer'. Buka database dan masuk ke collection. Masukkan data-data yang ada pada folder 'data' di repository ini sesuai dengan nama file dan collection.
-
-5. Backend bisa diakses pada [http://localhost:4001](http://localhost:4001). Frontend dapat diakses pada [http://localhost:4002](http://localhost:4002)
+4. Backend bisa diakses pada [http://localhost:4001](http://localhost:4001). Frontend dapat diakses pada [http://localhost:4002](http://localhost:4002)
 
