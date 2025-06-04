@@ -65,7 +65,7 @@ Seiring dengan meningkatknya level user, ia mampu mengakses area-area lainnya se
 
 ## Dokumentasi Docker
 
-Docker Hub: https://hub.docker.com/r/nahlsyareza/be-mc
+Docker Hub: https://hub.docker.com/r/nahlsyareza/fe-mc
 
 ### Requirement
 
