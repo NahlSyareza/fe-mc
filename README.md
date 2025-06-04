@@ -63,4 +63,69 @@ Ketika mengakses aplikasi frontend ini, user akan membuka halaman /home. Di dala
 Di dalam game, user bisa mengakses NPC terdekat untuk mengambil starter item. Setelah itu, dia bisa masuk ke dungeon dengan cara menekan icon di kanan. Sistem combat dari game ini adalah turn based, dan setiap aksi penyerangan memiliki cost. Selain menyerang, user bisa mengonsumsi potion atau menggunakan armor untuk meningkatkan defense. Jika user berhasil mengalahkan musuh, maka ia akan diberikan reward secara random. Jika kalah, maka ia tidak mendapatkan reward. Selain reward, user juga mendapatkan XP apabila ia memenangkan pertarungan.</br></br>
 Seiring dengan meningkatknya level user, ia mampu mengakses area-area lainnya sesuai dengan ketentuan level area tersebut. Area baru memiliki musuh baru dan juga reward baru.</br></br>
 
-## Docker
+## Dokumentasi Docker
+
+Docker Hub: https://hub.docker.com/r/nahlsyareza/be-mc
+
+### Requirement
+
+1. Pastikan Docker sudah terinstall
+
+2. Instalasi Docker bisa diverifikasi dengan command docker version di command prompt
+
+3. Pastikan juga kalian sudah menjalankan Docker Desktop
+
+### Menjalankan Docker
+
+1. Melakukan pull untuk ketiga image ini:
+
+```
+docker pull nahlsyareza/be-mc:latest
+docker pull nahlsyareza/fe-mc:latest
+docker pull mongo
+```
+
+2. Membuat file docker compose dengan isi berikut:
+
+```
+version: "3.8"
+services:
+  frontend:
+    # build: ./fe-mc
+    image: nahlsyareza/fe-mc
+    container_name: fe-mc
+    ports:
+      - 4002:4002
+    networks:
+      - mc-network
+  backend:
+    # build: ./be-mc
+    image: nahlsyareza/be-mc
+    container_name: be-mc
+    ports:
+      - 4001:4001
+    networks:
+      - mc-network
+  database:
+    image: mongo
+    container_name: mongodb
+    ports:
+      - 27017:27017
+    networks:
+      - mc-network
+
+networks:
+  mc-network:
+    external: true
+```
+
+3. Download [MongoDB Compass](https://www.mongodb.com/try/download/compass) dan buat koneksi baru dengan connection string ini
+
+```
+mongodb://localhost:27017
+```
+
+4. Akan dibuat database baru bernama 'majo_computer'. Buka database dan masuk ke collection. Masukkan data-data yang ada pada folder 'data' di repository ini sesuai dengan nama file dan collection.
+
+5. Backend bisa diakses pada [http://localhost:4001](http://localhost:4001). Frontend dapat diakses pada [http://localhost:4002](http://localhost:4002)
+

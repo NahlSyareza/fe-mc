@@ -51,12 +51,13 @@ function Duel() {
           .get(`/enemy/getLevelled/?level=${r.payload.level}&biome=${biome}`)
           .then((e) => {
             const res = e.data;
+            console.log("Retrieved enemy!");
             console.log(res);
             setEnemy({
               ...e.data.payload,
               hp: res.payload.max_hp,
-              mp: res.payload.max_mp,
-              sp: res.payload.max_sp,
+              // mp: res.payload.max_mp,
+              // sp: res.payload.max_sp,
             });
           })
           .catch((e) => console.error(e));

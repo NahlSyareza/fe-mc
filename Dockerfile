@@ -2,6 +2,8 @@ FROM node:alpine
 WORKDIR /app
 COPY package*.json /app
 RUN npm install
+RUN npm install serve
 COPY . /app
-CMD npm run dev
-EXPOSE 5173
+RUN npm run build
+CMD ["npm", "run", "start"]
+EXPOSE 4010
