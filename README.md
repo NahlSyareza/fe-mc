@@ -117,11 +117,16 @@ networks:
     external: true
 ```
 
-3. Download [MongoDB Compass](https://www.mongodb.com/try/download/compass) dan buat koneksi baru dengan connection string ini
+3. Jalankan
+```
+docker compose up
+```
+
+4. Download [MongoDB Compass](https://www.mongodb.com/try/download/compass) dan buat koneksi baru dengan connection string ini
 
 ```
 mongodb://localhost:27017
 ```
 
-4. Backend bisa diakses pada [http://localhost:4001](http://localhost:4001). Frontend dapat diakses pada [http://localhost:4002](http://localhost:4002)
+5. Backend bisa diakses pada [http://localhost:4001](http://localhost:4001). Frontend dapat diakses pada [http://localhost:4002](http://localhost:4002)
 
