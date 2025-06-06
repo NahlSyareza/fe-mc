@@ -1,5 +1,11 @@
 # Proyek SBD
 
+## Anggota
+- Yehezkiel Jonatan - 2006520235 (Frontend Developer)
+- Muhammad Hafiz Widyawan - 2006468762 (Backend Developer)
+- Darmawan Hanif - 2206829175 (Backend Developer)
+- Nahl Syareza Rahidra - 2206830340 (Frontend Developer + Integration)
+
 ## Penjelasan
 
 Kami membuat proyek game sederhana yang diimplementasikan menggunakan JavaScript. Game kami terbagi menjadi bagian, yaitu backend dan frontend. Frontend berinteraksi langsung dengan player dari game. Ia menampilkan fungsionalitas dari game, data dari database, dan juga melihat/menambahkan/mengurangi data dari database
